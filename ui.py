@@ -458,7 +458,7 @@ def ___handleEnchant(theItem: item.Item, wg, HEAD: str) -> None:
                     f"^ Got it, {enchStr} removed but ({theItem.findEnchant(lookup, val=True)}) still from sockets.")
         elif u.splits(s, lambda x: u.strIsInt(x), lasts = lambda x: x in c.ENCHANTS_STR_INT):
             for enchStr in s[1:]:
-                lookup = c.ENCHANTS_STR_LOOKUPy(enchStr, wg)
+                lookup = c.ENCHANTS_STR_LOOKUP(enchStr, wg)
                 subContrib = theItem.subContribToEnchant(lookup)
                 old = theItem.updateEnchant(lookup, int(s[0]) + subContrib)
                 print(f"^ Got it, {enchStr} {old} ({subContrib}) —> {theItem.findEnchant(lookup, val=True)} ({subContrib})")
