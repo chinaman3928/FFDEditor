@@ -340,7 +340,7 @@ class Navigator:
     def _read(self, size: int, overriden_32_0 = True) -> bytes:
         """Both self._32_0 and overriden_32_0 have to be True to do 32 <-> 0."""
         toRet = self._file[self._p:self._p + size]
-        if self._32_0 and overriden_32_0:
+        if self._32_0 and overriden_32_0 and False:
             toRet = toRet.replace(b' ', b'\x00')
         self._p += size
         return toRet
